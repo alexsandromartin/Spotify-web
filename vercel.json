@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "back-end/api/server.js": {
+      "runtime": "node@20.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/back-end/api/server.js"
+    }
+  ]
+}
