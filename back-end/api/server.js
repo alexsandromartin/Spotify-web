@@ -6,10 +6,10 @@
 
 import express from "express";
 import { db } from "./connect.js";
-import cors from "cors"; //Middleware que permite que a API seja acessada por qualquer domínio
+import cors from "cors";
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Usa a PORTA da Render ou o padrão 3000
 
 app.use(cors());
 
@@ -26,5 +26,5 @@ app.get("/songs", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`SERVIDOR ESTÁ ESCUTANDO NA PORTA ${{ PORT }}`);
+  console.log(`SERVIDOR ESTÁ ESCUTANDO NA PORTA ${PORT}`); // Interpolação de string correta
 });
